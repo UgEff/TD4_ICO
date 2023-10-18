@@ -1,14 +1,11 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+// contracts/GLDToken.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
-contract Counter {
-    uint256 public number;
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
-
-    function increment() public {
-        number++;
+contract QToken is ERC20 {
+    constructor() ERC20("Qtoken", "Q") {
+        _mint(msg.sender, 10000);
     }
 }
